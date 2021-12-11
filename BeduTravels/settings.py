@@ -91,6 +91,14 @@ DATABASES = {
         'PASSWORD': 'pythonsql',
         'HOST': '127.0.0.1',
         'PORT': '3307',
+
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.mysql',
+        #     'NAME': 'bapxv5hq1vz7sfl9',
+        #     'USER': 'mu9aj529xtg9hloo',
+        #     'PASSWORD': 'xacernrcg7204np2',
+        #     'HOST': 'uzb4o9e2oe257glt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        #     'PORT': '3306',
     }
 }
 
@@ -141,3 +149,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Genera las bases de datos en heroku en lugar de los locales
 django_heroku.settings(locals())
+
+del DATABASES['default']['OPTIONS']['sslmode']
